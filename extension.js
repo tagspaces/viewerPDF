@@ -4,10 +4,10 @@
 define(function(require, exports, module) {
   "use strict";
 
-  console.log("Loading viewerPDF");
-
   var extensionID = "viewerPDF"; // ID should be equal to the directory name where the ext. is located
   var extensionSupportedFileTypes = ["pdf"];
+
+  console.log("Loading " + extensionID);
 
   var TSCORE = require("tscore");
   var extensionDirectory = TSCORE.Config.getExtensionPath() + "/" + extensionID;
@@ -20,22 +20,22 @@ define(function(require, exports, module) {
       "nwdisable": "",
       "nwfaketop": ""
     }));
-  };
+  }
 
   function viewerMode() {
 
     console.log("viewerMode not supported on this extension");
-  };
+  }
 
   function setContent() {
 
     console.log("setContent not supported on this extension");
-  };
+  }
 
   function getContent() {
 
     console.log("getContent not supported on this extension");
-  };
+  }
 
   exports.init = init;
   exports.getContent = getContent;
