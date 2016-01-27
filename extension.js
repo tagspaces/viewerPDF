@@ -1,21 +1,18 @@
-/* Copyright (c) 2013 The Tagspaces Authors. All rights reserved.
- * Use of this source code is governed by a AGPL3 license that
- * can be found in the LICENSE file. */
+/* Copyright (c) 2013-2016 The TagSpaces Authors.
+ * Use of this source code is governed by the MIT license which can be found in the LICENSE.txt file. */
 
 define(function(require, exports, module) {
   "use strict";
 
   console.log("Loading viewerPDF");
 
-  exports.id = "viewerPDF"; // ID should be equal to the directory name where the ext. is located   
-  exports.title = "PDF Viewer";
-  exports.type = "viewer";
-  exports.supportedFileTypes = ["pdf"];
+  var extensionID = "viewerPDF"; // ID should be equal to the directory name where the ext. is located
+  var extensionSupportedFileTypes = ["pdf"];
 
   var TSCORE = require("tscore");
-  var extensionDirectory = TSCORE.Config.getExtensionPath() + "/" + exports.id;
+  var extensionDirectory = TSCORE.Config.getExtensionPath() + "/" + extensionID;
 
-  exports.init = function(filePath, elementID) {
+  function init(filePath, elementID) {
     console.log("Initalization Browser PDF Viewer...");
     $('#' + elementID).append($('<iframe>', {
       id: "iframeViewer",
@@ -25,15 +22,24 @@ define(function(require, exports, module) {
     }));
   };
 
-  exports.viewerMode = function() {
+  function viewerMode() {
+
     console.log("viewerMode not supported on this extension");
   };
 
-  exports.setContent = function() {
+  function setContent() {
+
     console.log("setContent not supported on this extension");
   };
 
-  exports.getContent = function() {
+  function getContent() {
+
     console.log("getContent not supported on this extension");
   };
+
+  exports.init = init;
+  exports.getContent = getContent;
+  exports.setContent = setContent;
+  exports.viewerMode = viewerMode;
+  //exports.setFileType = setFileType;
 });
