@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2016 The TagSpaces Authors.
+/* Copyright (c) 2013-2017 The TagSpaces Authors.
  * Use of this source code is governed by the MIT license which can be found in the LICENSE.txt file. */
 
 define(function(require, exports, module) {
@@ -17,6 +17,7 @@ define(function(require, exports, module) {
     $('#' + elementID).append($('<iframe>', {
       id: "iframeViewer",
       src: "libs/pdfjs/web/viewer.html?file=" + encodeURIComponent(filePath),
+      //src: "ext/viewerPDF/viewer/viewer.html?file=" + encodeURIComponent(filePath),
       "nwdisable": "",
       "nwfaketop": ""
     }));
