@@ -11,6 +11,5 @@
   },
   "license": "MIT",
   "dependencies": {
-    "pdfjs-dist": "2.0.87"
   }
 }
