@@ -16,10 +16,7 @@ define(function(require, exports, module) {
     console.log("Initalization Browser PDF Viewer...");
     $('#' + elementID).append($('<iframe>', {
       id: "iframeViewer",
-      // src: "libs/pdfjs/web/viewer.html?file=" + encodeURIComponent(filePath),
       src: "ext/viewerPDF/generic/web/viewer.html?file=" + encodeURIComponent(filePath),
-      "nwdisable": "",
-      "nwfaketop": ""
     }));
   }
 
