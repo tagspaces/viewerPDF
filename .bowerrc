@@ -1,7 +1,0 @@
-{
-  "directory": "libs",
-  "color": true,
-  "ignoredDependencies": [
-    "pdfjs-dist"
-  ]
-}
