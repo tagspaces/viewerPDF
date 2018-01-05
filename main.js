@@ -3,23 +3,21 @@
 
 "use strict";
 
-var loadContentExternally = false;
+(function() {
+  function getParameterByName (name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+    var results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 
-(function () {
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-        var results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  var locale = getParameterByName("locale");
+  var filePath = getParameterByName("file") || '../../example.pdf';
+
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      const pdfViewer = document.getElementById('pdfviewer');
+      pdfViewer.setAttribute('src', 'generic/web/viewer.html?file=' + filePath);
     }
-
-    var locale = getParameterByName("locale");
-    var filePath = getParameterByName("file") || '../../example.pdf';
-
-    document.onreadystatechange = () => {
-        if (document.readyState === 'complete') {
-            const pdfViewer = document.getElementById('pdfviewer');
-            pdfViewer.setAttribute('src', 'generic/web/viewer.html?file=' + filePath);
-        }
-    };
+  };
 })();
