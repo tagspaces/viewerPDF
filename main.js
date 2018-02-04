@@ -3,16 +3,16 @@
 
 'use strict';
 
-(function() {
-  function getParameterByName (name) {
-    name = name.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
+(() => {
+  function getParameterByName (paramName) {
+    const name = paramName.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    const results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
 
-  var locale = getParameterByName('locale');
-  var filePath = getParameterByName('file') || '../../example.pdf';
+  // const locale = getParameterByName('locale');
+  const filePath = getParameterByName('file') || '../../example.pdf';
 
   document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
