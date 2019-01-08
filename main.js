@@ -17,7 +17,7 @@
   document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
       const pdfViewer = document.getElementById('pdfviewer');
-      pdfViewer.setAttribute('src', 'generic/web/viewer.html?file=' + filePath);
+      pdfViewer.setAttribute('src', 'generic/web/viewer.html?file=' + encodeURIComponent(filePath));
     }
   };
 })();
