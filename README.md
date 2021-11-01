@@ -1,3 +1,5 @@
+This repository is archived. Please use https://github.com/tagspaces/tagspaces-extensions instead.
+
 # PDF Viewer for TagSpaces
 
 A TagSpaces extension allowing opening, searching and navigating thought PDF files.
